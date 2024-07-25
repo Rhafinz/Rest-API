@@ -7,7 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class film extends Model
 {
+
     use HasFactory;
+    protected $fillable = ['judul', 'deskripsi', 'foto', 'url_video', 'id_kategori'];
+
 
     public function kategori()
     {
@@ -21,6 +24,6 @@ class film extends Model
 
     public function aktor()
     {
-        return $this->belongsToMany(Aktor::class, 'genre_film', 'id_film', 'id_aktor');
+        return $this->belongsToMany(Aktor::class, 'aktor_film', 'id_film', 'id_aktor');
     }
 }
