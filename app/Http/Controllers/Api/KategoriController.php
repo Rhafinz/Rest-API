@@ -11,7 +11,7 @@ class KategoriController extends Controller
 {
     public function index()
     {
-        $kategori = Kategori::latest()->get();
+        $kategori = kategori::latest()->get();
         $response = [
             'success' => true,
             'message' => 'Data Kategori',
